@@ -1,4 +1,4 @@
-package chapter01;
+package chapter01.enums;
 
 /**
  * Knowledge of enums is required for OCPJP

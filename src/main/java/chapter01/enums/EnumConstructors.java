@@ -1,4 +1,4 @@
-package chapter01;
+package chapter01.enums;
 
 /**
  * Enum is a variation of class with bunch of special restrictions

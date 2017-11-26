@@ -1,4 +1,4 @@
-package chapter01;
+package chapter01.enums;
 
 /**
  * It's possible to type enum constructs which resemble anonymous classes
