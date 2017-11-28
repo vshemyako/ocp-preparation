@@ -40,6 +40,10 @@ enum Planet {
         //another strange thing: static field cannot be referenced from within a constructor
         //this.greeting = "Goodbye";
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
 enum Clothes {

@@ -7,6 +7,8 @@ package chapter01.innerclasses;
  */
 public class LocalClass {
 
+    private String tryToAccessFromLocal = "Outer";
+
     public void calculate() {
 
         final int aNumber;
@@ -21,6 +23,7 @@ public class LocalClass {
             public void sum() {
                 System.out.println(aNumber);
                 System.out.println(bNumber);
+                System.out.println(LocalClass.this.tryToAccessFromLocal);
 
                 //only access to local final (effectively final since JDK8) is allowed
                 //System.out.println(cNumber);
