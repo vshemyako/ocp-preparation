@@ -4,7 +4,7 @@ package chapter01;
  * One have to know all of the methods which are automatically
  * inherited by all of the objects in java from super class Object
  */
-public class toStringEqualsHashCode {
+public class ToStringEqualsHashCode {
 }
 
 class Humanoid {
