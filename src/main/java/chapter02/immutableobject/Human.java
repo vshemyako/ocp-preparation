@@ -1,5 +1,7 @@
 package chapter02.immutableobject;
 
+import chapter02.builder.HumanBuilder;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,6 +27,11 @@ public final class Human {
         this.secondName = secondName;
         //don't just assign mutable object, but copy them!
         this.children = new ArrayList<>(children);
+    }
+
+    //for builder design pattern
+    public Human(HumanBuilder builder) {
+        this(builder.getFirstName(), builder.getSecondName(), builder.getChildren());
     }
 
     //only getters - no setters
