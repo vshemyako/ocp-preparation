@@ -1,6 +1,7 @@
 package chapter03.collections;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Stream;
 
@@ -29,6 +30,16 @@ public class CollectionInterface {
         remove(numbers, 22);
 
         //Bulk methods
+        //Perform operation upon all of the elements in a collection
+        Collection<Number> anotherNumbers = Arrays.asList(11, 33, null);
+        addAll(numbers, anotherNumbers);
+        removeAll(numbers, anotherNumbers);
+        retainAll(numbers, anotherNumbers);
+        clear(numbers);
+        removeIf(numbers);
+
+        //Stream
+        stream(numbers);
     }
 
     //As one may see methods below accepts Collection's interface instances
