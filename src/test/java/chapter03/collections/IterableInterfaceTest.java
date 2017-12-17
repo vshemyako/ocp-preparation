@@ -12,7 +12,7 @@ import java.util.Spliterator;
  */
 public class IterableInterfaceTest {
 
-    Iterable<String> iterable = Arrays.asList("first", "second", "third");
+    private static final Iterable<String> iterable = Arrays.asList("first", "second", "third");
 
     //  1. java.util.Iterable#iterator()
     @Test
