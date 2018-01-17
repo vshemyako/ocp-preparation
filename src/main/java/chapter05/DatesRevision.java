@@ -3,7 +3,7 @@ package chapter05;
 import java.time.*;
 
 /**
- * OCP goes a little bit further in requirements of knowledge java.time package
+ * OCP goes a little bit further in requirements of knowledge of java.time package
  */
 public class DatesRevision {
 
