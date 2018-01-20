@@ -17,11 +17,11 @@ public class UsageOfPropertyFile {
     private static void createLocale() {
         Locale englishLocale = new Locale("en");
         printGreeting(englishLocale);
-        printFarewell(englishLocale);
+        //printFarewell(englishLocale);
 
-        Locale russianLocale = new Locale("ru");
-        printGreeting(russianLocale);
-        printFarewell(russianLocale);
+        //Locale russianLocale = new Locale("ru");
+        //printGreeting(russianLocale);
+        //printFarewell(russianLocale);
     }
 
     /**
@@ -31,7 +31,8 @@ public class UsageOfPropertyFile {
         //Acquire locale specific bundle file
         ResourceBundle greetingBundle = ResourceBundle.getBundle(GREET_BUNDLE, locale);
         //Print out desired string
-        System.out.println(greetingBundle.getString("_hello"));
+        //System.out.println(greetingBundle.getString("_hello"));
+        System.out.println(greetingBundle.getString("_parent"));
     }
 
     /**
@@ -73,6 +74,6 @@ public class UsageOfPropertyFile {
      */
     public static void main(String[] args) {
         createLocale();
-        printPropertyFiles();
+        //printPropertyFiles();
     }
 }
