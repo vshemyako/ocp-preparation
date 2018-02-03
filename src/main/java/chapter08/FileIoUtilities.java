@@ -80,6 +80,15 @@ public class FileIoUtilities {
     }
 
     /**
+     * Shows how to rename a file
+     */
+    private static void renameExample() {
+        File ocaTest = new File("c:\\Library\\Java\\Oracles Certification\\OCA Preparation\\Chapter 2 Test.txt");
+        File newFileName = new File("c:\\Library\\Java\\Oracles Certification\\OCA Preparation\\Chapter 002 Test.txt");
+        ocaTest.renameTo(newFileName);
+    }
+
+    /**
      * Shows how to create new directories and rename existing ones
      */
     private static void directoriesModification() {
@@ -110,6 +119,7 @@ public class FileIoUtilities {
         //fileConstructorTest();
         //useBasicFileMethods();
         //useBasicDirectoryMethods();
-        directoriesModification();
+        //directoriesModification();
+        renameExample();
     }
 }
