@@ -10,6 +10,9 @@ import java.nio.file.Paths;
  */
 public class PathMethods {
 
+    /**
+     * Main method =)
+     */
     public static void main(String[] args) {
         Path path = Paths.get("C:\\Projects\\Certification\\OCPJP\\ocp-preparation\\src\\main\\java\\chapter08\\abc_copied.txt");
 
