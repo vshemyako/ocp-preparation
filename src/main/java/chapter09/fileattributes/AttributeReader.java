@@ -40,6 +40,12 @@ public class AttributeReader {
         } catch (IOException e) {
             //handle IO exception
         }
+
+        //read, execute privileges
+        System.out.println("Is possible to read: " + Files.isReadable(directory));
+        System.out.println("Is possible to execute: " + Files.isExecutable(directory));
+        System.out.println("Is possible to read: " + Files.isReadable(regularFile));
+        System.out.println("Is possible to execute: " + Files.isExecutable(regularFile));
     }
 
     /**
