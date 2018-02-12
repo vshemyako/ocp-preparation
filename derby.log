@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Feb 12 23:59:55 MSK 2018:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): экземпляр a816c00e-0161-8bd1-2613-000006edca40
+в каталоге базы данных C:\Projects\Certification\OCPJP\ocp-preparation\zoo sun.misc.Launcher$AppClassLoader@18b4aac2 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_144-b01
+user.dir=C:\Projects\Certification\OCPJP\ocp-preparation
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Запущен загрузчик классов базы данных - derby.database.classpath=''
