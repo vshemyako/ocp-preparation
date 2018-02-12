@@ -11,14 +11,15 @@ public class SelectQueries {
     private static final String SPECIES_ID = "id";
     private static final String SPECIES_NAME = "name";
     private static final String ANIMAL_DATE_BORN = "date_born";
+    public static final String ANIMAL_NAME = "name";
 
     /**
      * Executes sql query. Only DML queries are supported, type forward only
      */
     private void executeDML(String dmlString) {
-        try (Connection connection = DriverManager.getConnection(DB_URL)) {
-            Statement sqlStatement = connection.createStatement();
-            ResultSet resultSet = sqlStatement.executeQuery(dmlString);
+        try (Connection connection = DriverManager.getConnection(DB_URL);
+             Statement sqlStatement = connection.createStatement();
+             ResultSet resultSet = sqlStatement.executeQuery(dmlString)) {
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt(SPECIES_ID) + " " + resultSet.getString(SPECIES_NAME));
             }
@@ -31,9 +32,9 @@ public class SelectQueries {
      * Shows the difference between different sql date objects
      */
     private void retrieveDateObjects(String dmlString) {
-        try (Connection connection = DriverManager.getConnection(DB_URL)) {
-            Statement sqlStatement = connection.createStatement();
-            ResultSet resultSet = sqlStatement.executeQuery(dmlString);
+        try (Connection connection = DriverManager.getConnection(DB_URL);
+             Statement sqlStatement = connection.createStatement();
+             ResultSet resultSet = sqlStatement.executeQuery(dmlString)) {
             while (resultSet.next()) {
                 java.sql.Date noTimePart = resultSet.getDate(ANIMAL_DATE_BORN);
                 java.sql.Time noDayPart = resultSet.getTime(ANIMAL_DATE_BORN);
@@ -49,6 +50,30 @@ public class SelectQueries {
     }
 
     /**
+     * Demonstrates usage of 'scrollable' {@link Statement}
+     */
+    private void scroll(String dmlString) {
+        try (Connection connection = DriverManager.getConnection(DB_URL);
+             Statement sqlStatement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+             ResultSet resultSet = sqlStatement.executeQuery(dmlString)) {
+            if (resultSet.first()) {
+                System.out.println(resultSet.getString(ANIMAL_NAME));
+            }
+            if (resultSet.last()) {
+                System.out.println(resultSet.getString(ANIMAL_NAME));
+            }
+            if (resultSet.absolute(2)) {
+                System.out.println(resultSet.getString(ANIMAL_NAME));
+            }
+            if (resultSet.relative(1)) {
+                System.out.println(resultSet.getString(ANIMAL_NAME));
+            }
+        } catch (SQLException e) {
+            System.err.println("Sql exception: " + e.getMessage());
+        }
+    }
+
+    /**
      * Plain old entry point
      */
     public static void main(String[] args) {
@@ -57,5 +82,8 @@ public class SelectQueries {
 
         String anotherSqlQuery = "SELECT date_born FROM animal WHERE name = 'Zelda'";
         new SelectQueries().retrieveDateObjects(anotherSqlQuery);
+
+        String queryAll = "SELECT * FROM animal";
+        new SelectQueries().scroll(queryAll);
     }
 }
