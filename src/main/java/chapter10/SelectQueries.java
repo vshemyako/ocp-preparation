@@ -11,7 +11,7 @@ public class SelectQueries {
     private static final String SPECIES_ID = "id";
     private static final String SPECIES_NAME = "name";
     private static final String ANIMAL_DATE_BORN = "date_born";
-    public static final String ANIMAL_NAME = "name";
+    private static final String ANIMAL_NAME = "name";
 
     /**
      * Executes sql query. Only DML queries are supported, type forward only
