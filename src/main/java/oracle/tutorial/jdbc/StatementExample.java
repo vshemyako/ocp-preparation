@@ -26,7 +26,7 @@ public class StatementExample {
                 System.out.println(resultSet.next());
 
                 //remember only #next() is valid for ResultSet.TYPE_FORWARD_ONLY
-                //System.out.println(resultSet.first());
+                System.out.println(resultSet.absolute(0));
             } else {
                 int affectedRows = statement.getUpdateCount();
             }
@@ -58,7 +58,7 @@ public class StatementExample {
      * Entry point
      */
     public static void main(String[] args) {
-        //execute();
-        scroll();
+        execute();
+        //scroll();
     }
 }
