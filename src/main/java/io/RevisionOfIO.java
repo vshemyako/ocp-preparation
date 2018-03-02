@@ -3,6 +3,8 @@ package io;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Reviewing some tricky parts of java.io package
@@ -50,11 +52,32 @@ public class RevisionOfIO {
     }
 
     /**
+     * Edge case with normalize
+     */
+    private static void normalize() {
+        Path path = Paths.get(".");
+        System.out.println(path);
+        System.out.println(path.normalize());
+        System.out.println(path.getNameCount());
+    }
+
+    private static void parent() {
+        Path path = Paths.get("/sang");
+        System.out.println(path);
+        path = path.getParent();
+        System.out.println(path);
+        path = path.getRoot();
+        System.out.println(path);
+    }
+
+    /**
      * Works like a horse
      */
     public static void main(String[] args) {
         //getAbsolute();
         //directoryOfFile();
-        size();
+        //size();
+        //normalize();
+        parent();
     }
 }
