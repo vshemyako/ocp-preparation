@@ -7,6 +7,7 @@ public class EnumConstructors {
     public static void main(String[] args) {
         Planet pluto = Planet.Pluto;
         Planet mars = Planet.Mars;
+        mars.setName("");
     }
 }
 

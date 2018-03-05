@@ -12,9 +12,17 @@ public class TestingLambdas {
             //String first = "Illegal";
             System.out.println(first + second);
         };
+
+        SecondTest secondTest = () -> {};
+        secondTest = () -> Math.abs(2);
     }
 }
 
 interface FirstTest {
     void firstTest(String first, String second);
+}
+
+@FunctionalInterface
+interface SecondTest {
+    void doWhatever();
 }
