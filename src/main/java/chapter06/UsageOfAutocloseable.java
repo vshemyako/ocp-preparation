@@ -9,7 +9,7 @@ public class UsageOfAutocloseable {
 
         //Usage example
         //Note: object is close right after 'try' block
-        try (Box box = new Box()) {
+        try (Box box = new Box(); Box box2 = new Box();) {
             System.out.println("Try block");
         } catch (Exception ex) {
             System.out.println("Catch block");
