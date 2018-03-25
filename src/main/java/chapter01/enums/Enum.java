@@ -4,6 +4,7 @@ package chapter01.enums;
  * Knowledge of enums is required for OCPJP
  */
 public class Enum {
+
     public static void main(String[] args) {
 
         //it's possible to retrieve an array of enum values
@@ -50,5 +51,5 @@ public class Enum {
  * Behind the scenes enum is a class with a bunch of final static fields
  */
 enum Season {
-    SUMMER, AUTUMN, WINTER, SPRING
+    SUMMER, AUTUMN, WINTER, SPRING;
 }

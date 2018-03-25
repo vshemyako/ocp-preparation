@@ -1,9 +1,13 @@
 package chapter03.generics;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 /**
  * Some crazy looking syntax examples
  */
-public class GenericMethods {
+public abstract class GenericMethods {
 
     //Generic method in a not generic class
     public static <T> void doNotReturn(T t) {
@@ -12,6 +16,12 @@ public class GenericMethods {
     //Again it's legal
     public static <T> T doReturn(T t) {
         return t;
+    }
+
+    public abstract <U extends Number> Collection<? super Number> doReturn(List<? super Integer> list);
+
+    public static <E extends CharSequence> List<? super E> doIt(List<E> nums) {
+        return null;
     }
 
     //Obviously this is not legal
@@ -29,6 +39,11 @@ public class GenericMethods {
         //Or more simply
         System.out.println(GenericMethods.doReturn(10));
         System.out.println(doReturn(10));
+
+        List<?> resultUnknown = doIt(new ArrayList<String>());
+        //unexpected but its clever if you think a little
+        //List<Object> resultObject = doIt(new ArrayList<String>());
+        List resultWithoutGeneric = doIt(new ArrayList<String>());
     }
 }
 

@@ -80,8 +80,14 @@ public class WorkingWithPeriods {
         date.minus(duration);
     }
 
+    private static void ridiculousExample() {
+        System.out.println(Period.of(100, 200, 300));
+        System.out.println(Duration.of(150, ChronoUnit.MINUTES));
+    }
+
     public static void main(String[] args) {
         //manipulateDates();
-        outputOfDuration();
+        //outputOfDuration();
+        ridiculousExample();
     }
 }

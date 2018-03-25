@@ -1,5 +1,7 @@
 package chapter04;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -20,7 +22,13 @@ public class Examples {
         Stream.generate(() -> "1").limit(10).peek(System.out::println).forEach(System.out::println);
     }
 
+    private static void compute() {
+        List<Integer> ls = Arrays.asList(3, 4, 6, 9, 2, 5, 7);
+        System.out.println(ls.stream().max(Integer::max).get());
+    }
+
     public static void main(String[] args) {
-        second();
+        compute();
+        //second();
     }
 }
