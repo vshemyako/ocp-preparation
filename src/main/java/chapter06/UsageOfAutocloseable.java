@@ -17,6 +17,18 @@ public class UsageOfAutocloseable {
             System.out.println("Finally block");
         }
     }
+
+    //Maybe not so obvious scope topic of a try-with-resources clause
+    private static void scope() throws Exception {
+        //One have to declare and initialize variables in try-with-resources clause
+        /*Box box2 = null;
+        try (Box box = new Box();
+             box2 =new Box() ;){
+            //variables declared in try-with-resources clause are effectively final
+            box = new Box();
+            System.out.println("Try block");
+        }*/
+    }
 }
 
 /**
