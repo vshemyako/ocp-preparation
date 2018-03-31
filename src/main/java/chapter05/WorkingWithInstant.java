@@ -1,9 +1,6 @@
 package chapter05;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import java.time.Duration;
-import java.time.Instant;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.UnsupportedTemporalTypeException;
 
@@ -15,7 +12,7 @@ public class WorkingWithInstant {
     /**
      * Shows basic usage of Instant objects
      */
-    public static void instantTest() {
+    private static void instantTest() {
         Instant now = Instant.now();
         try {
             Thread.sleep(1000);
@@ -45,7 +42,21 @@ public class WorkingWithInstant {
         }
     }
 
+    private static void instantToLocalDateTime() {
+        Instant instant = Instant.parse("2018-03-29T20:00:00Z");
+        System.out.println(instant);
+
+        ZoneId systemDefault = ZoneId.systemDefault();
+        System.out.println(systemDefault);
+
+        LocalDateTime dateTime = LocalDateTime.ofInstant(instant, systemDefault);
+        System.out.println(dateTime);
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(instant, systemDefault);
+        System.out.println(zonedDateTime);
+    }
+
     public static void main(String[] args) {
-        instantTest();
+        instantToLocalDateTime();
     }
 }

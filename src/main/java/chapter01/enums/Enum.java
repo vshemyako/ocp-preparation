@@ -53,3 +53,13 @@ public class Enum {
 enum Season {
     SUMMER, AUTUMN, WINTER, SPRING;
 }
+
+enum Pets {
+    DOG("D"), CAT("C"), FISH("F");
+    //static String prefix = "I am ";
+    //PAY GOD DAMN ATTENTION ON THIS!!!b
+    static final String prefix = "I am ";
+    String name;
+    Pets(String s) { name = prefix + s;}
+    public String getData(){ return name; }
+}
