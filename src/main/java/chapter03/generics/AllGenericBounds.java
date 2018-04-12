@@ -19,6 +19,7 @@ public class AllGenericBounds {
         numberClassList = new ArrayList<Integer>();
         numberClassList = new ArrayList<Double>();
 
+
         // Lower bound
         List<? super Integer> integerClassList;
         integerClassList = new ArrayList<Integer>();

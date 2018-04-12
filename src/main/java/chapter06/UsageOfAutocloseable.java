@@ -9,13 +9,25 @@ public class UsageOfAutocloseable {
 
         //Usage example
         //Note: object is close right after 'try' block
-        try (Box box = new Box()) {
+        try (Box box = new Box(); Box box2 = new Box();) {
             System.out.println("Try block");
         } catch (Exception ex) {
             System.out.println("Catch block");
         } finally {
             System.out.println("Finally block");
         }
+    }
+
+    //Maybe not so obvious scope topic of a try-with-resources clause
+    private static void scope() throws Exception {
+        //One have to declare and initialize variables in try-with-resources clause
+        /*Box box2 = null;
+        try (Box box = new Box();
+             box2 =new Box() ;){
+            //variables declared in try-with-resources clause are effectively final
+            box = new Box();
+            System.out.println("Try block");
+        }*/
     }
 }
 

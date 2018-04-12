@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Demonstrates what happens when multiple threads share the same variable
+* Demonstrates what happens when multiple threads share the same variable
  */
 public class UnsynchronizedThreads {
 
@@ -15,7 +15,7 @@ public class UnsynchronizedThreads {
      */
     private void incrementValue() {
         synchronized (this) {
-            System.out.println(++number);
+            System.out.print(++number + " ");
         }
     }
 
