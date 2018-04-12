@@ -1,6 +1,8 @@
 package chapter06;
 
 import java.sql.SQLException;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Supplier;
 
 /**
  * Examples of some edge cases which I've encountered resolving dummy OCP tests
@@ -16,7 +18,7 @@ public class TryCatchBlockTests {
     public static void main(String[] args) throws SneezeException {
         try {
             throw new SneezeException();
-        } catch (SneezeException e) {
+        } catch (Exception e) {
             // e = new RuntimeException();
             throw e;
         }
@@ -34,5 +36,17 @@ public class TryCatchBlockTests {
     }
 
     private void readFromDatabase() throws SQLException {
+    }
+
+    private static void functionalTest() {
+        //Supplier<WithException> withException = WithException::fallWithDefaultError;
+    }
+}
+
+interface WithException {
+    void fallWithError() throws Exception;
+
+    static WithException fallWithDefaultError() throws Exception {
+        throw new Exception();
     }
 }

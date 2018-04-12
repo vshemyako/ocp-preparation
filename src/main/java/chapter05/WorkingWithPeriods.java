@@ -1,6 +1,7 @@
 package chapter05;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.UnsupportedTemporalTypeException;
 
 /**
@@ -65,7 +66,28 @@ public class WorkingWithPeriods {
         }
     }
 
+    private static void outputOfDuration() {
+        Duration duration = Duration.of(90, ChronoUnit.SECONDS);
+        System.out.println(duration);
+
+        Period period = Period.ofDays(888);
+        System.out.println(period);
+    }
+
+    private static void changeLocalDateValue() {
+        LocalDate date = LocalDate.now();
+        Duration duration = Duration.ofDays(1);
+        date.minus(duration);
+    }
+
+    private static void ridiculousExample() {
+        System.out.println(Period.of(100, 200, 300));
+        System.out.println(Duration.of(150, ChronoUnit.MINUTES));
+    }
+
     public static void main(String[] args) {
-        manipulateDates();
+        //manipulateDates();
+        //outputOfDuration();
+        ridiculousExample();
     }
 }

@@ -12,7 +12,6 @@ public class LocalesOCP {
      * Shows basic usage of {@link java.util.Locale} class
      */
     private static void localeInstanceCreation() {
-
         //Using default locale
         Locale defaultLocale = Locale.getDefault();
         System.out.println(defaultLocale); //ru_RU -> system uses russian language and is located in Russia
@@ -24,6 +23,8 @@ public class LocalesOCP {
         System.out.println(predefinedLanguageCountryLocale); //it_IT
 
         //Using constructor, passing strings
+        //This constructor normalizes the language value to lowercase and
+        //the country value to uppercase
         Locale russianLocale = new Locale("ru", "RU");
         System.out.println(russianLocale); //ru_RU
 

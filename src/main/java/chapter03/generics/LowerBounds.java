@@ -20,7 +20,10 @@ public class LowerBounds {
         wildCard(new ArrayList<Integer>());
         wildCard(new ArrayList<Number>());
         wildCard(new ArrayList<Object>());
+        List<? super Integer> list = new ArrayList<Number>();
+        list.add(10);
     }
+
 
     //Lower-bound is mutable
     public static void lowerBound(List<? super Integer> objects) {

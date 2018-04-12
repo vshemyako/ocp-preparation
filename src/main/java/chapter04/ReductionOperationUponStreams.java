@@ -48,10 +48,17 @@ public class ReductionOperationUponStreams {
         System.out.println(result);
     }
 
+    //Filtering
+    public static void filter() {
+        Stream<String> words = Stream.of("one", "two", "three");
+        words.filter(word -> word.startsWith("t")).forEach(System.out::println);
+    }
+
     //Fires up desired method
     public static void main(String[] args) {
-        reduceManual();
-        reduceUsingStream();
-        multiplicationUsingStream();
+        //reduceManual();
+        //reduceUsingStream();
+        //multiplicationUsingStream();
+        filter();
     }
 }
