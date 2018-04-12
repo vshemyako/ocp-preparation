@@ -1,5 +1,7 @@
 package chapter01.innerclasses;
 
+import java.awt.event.ActionEvent;
+
 /**
  * It's far from obvious how to access outer/inner members of the nested classes
  * <p>
@@ -30,15 +32,16 @@ public class InnerClassMembers {
     }
 
     public class FirstInner {
-        private String name = "John";
+        // private String name = "John";
 
         public void tellMeName() {
         }
-        //Error: inner classes cannot have static declarations
-        /*
-        static String name = "Hello";
 
-        static void print() {
+        //Error: inner classes cannot have static declarations
+        final static String name = "Hello";
+
+        /*
+        final static void print() {
             System.out.println("Print");
         }
         */
@@ -100,5 +103,62 @@ public class InnerClassMembers {
                 }
             }
         }
+    }
+}
+
+class A {
+    private int variable = 10;
+
+    public class B {
+        private int variable = 20;
+
+        public class C {
+            private int variable = 30;
+
+            public class D {
+                private int variable = 40;
+
+                private void accessInstanceVariables() {
+                    int accessed = variable; //allowed this.variable or D.this.variable;
+                    accessed = A.this.variable; //only in this way
+                    accessed = B.this.variable; //or A.B
+                    accessed = C.this.variable; //or A.B.C
+                    accessed = D.this.variable; //or A.B.C.D
+                }
+            }
+        }
+    }
+
+    public static void instantiate() {
+        //how to instantiate those classes?
+        A a = new A();
+        A.B b = a.new B(); //B b is also allowed
+        A.B.C c = b.new C(); //B.C c is also allowed
+        A.B.C.D d = c.new D(); //B.C.D d is also allowed
+    }
+}
+
+class X {
+    public static void instantiate() {
+        A a = new A();
+        A.B b = a.new B(); //B b isn't allowed cuz we don't know where to look for B class
+    }
+}
+
+// Example from Enthuware
+// Anonymous inner class can have initialization parameters
+class TestClass {
+    public TestClass(int i) {
+    }
+
+    public void m1() {
+        TestClass al = new TestClass(10) {
+            public void actionPerformed(ActionEvent e) {
+            }
+
+            public void shout() {
+                System.out.println();
+            }
+        };
     }
 }

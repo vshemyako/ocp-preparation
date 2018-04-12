@@ -1,5 +1,8 @@
 package chapter06;
 
+import java.sql.SQLException;
+import java.time.format.DateTimeParseException;
+
 /**
  * Sometimes it's necessary to catch several exceptions types which are not from the same hierarchy, but which are
  * related to a common problem. JDK1.7 present new approach to reduce extra code for doing this

@@ -1,6 +1,7 @@
 package chapter01;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Basic concepts of instance of operator
@@ -11,6 +12,13 @@ public class InstanceOf {
         RedCat redCat = new RedCat();
         GreenCat greenCat = new GreenCat();
         YellowCat yellowCat = new YellowCat();
+
+        RedCat[] redCats = {new RedCat()};
+        boolean value = redCats instanceof BigCat[];
+        System.out.println(value);
+
+        List<RedCat> redCatList = new ArrayList<>();
+        //boolean anotherValue = redCatList instanceof List<BigCat>;
 
         //instance of a class is always instance of that class =)
         System.out.println("bigCat instanceof BigCat: " + (bigCat instanceof BigCat));
@@ -36,12 +44,17 @@ public class InstanceOf {
     }
 }
 
-class BigCat {}
+class BigCat {
+}
 
-interface Jump {}
+interface Jump {
+}
 
-class RedCat extends BigCat {}
+class RedCat extends BigCat {
+}
 
-class GreenCat extends BigCat {}
+class GreenCat extends BigCat {
+}
 
-class YellowCat extends BigCat implements Jump {}
+class YellowCat extends BigCat implements Jump {
+}

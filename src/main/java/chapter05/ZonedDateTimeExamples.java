@@ -1,6 +1,7 @@
 package chapter05;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 /**
  * ZonedDateTime class wasn't on the OCA exam, so its better to pay extra attention to its methods
@@ -31,7 +32,14 @@ public class ZonedDateTimeExamples {
         System.out.println(doNotDoThis);
     }
 
+    private static void untilBetween() {
+        LocalDateTime time1 = LocalDateTime.of(2018, 2, 20, 10, 20);
+        LocalDateTime time2 = LocalDateTime.of(2018, 2, 20, 10, 25);
+        System.out.println(ChronoUnit.DAYS.between(time2, time1));
+    }
+
     public static void main(String[] args) {
-        createZonedDateTime();
+        //createZonedDateTime();
+        untilBetween();
     }
 }

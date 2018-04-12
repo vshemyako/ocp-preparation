@@ -43,7 +43,7 @@ public class FileIoUtilities {
      * There are several methods which participant in OCP exam should know
      */
     private static void useBasicFileMethods() {
-        File ocaTest = new File("c:\\Library\\Java\\Oracles Certification\\OCA Preparation\\Chapter 1 Test.txt");
+        File ocaTest = new File("c:\\Library\\Java\\Oracles Certification\\OCA Preparation\\Chapter 002 Test.txt");
         if (ocaTest.exists()) {
             System.out.println("Specified file do exist:");
             System.out.println("\tName of the file: " + ocaTest.getName());
@@ -117,9 +117,9 @@ public class FileIoUtilities {
         //System.out.println(getFileSeparatorFromProperty());
         //System.out.println(getFileSeparatorFromField());
         //fileConstructorTest();
-        //useBasicFileMethods();
+        useBasicFileMethods();
         //useBasicDirectoryMethods();
         //directoriesModification();
-        renameExample();
+        //renameExample();
     }
 }

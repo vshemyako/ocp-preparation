@@ -13,7 +13,7 @@ public class PathMethods {
     /**
      * Main method =)
      */
-    public static void main(String[] args) {
+    public static void custom() {
         Path path = Paths.get("C:\\Projects\\Certification\\OCPJP\\ocp-preparation\\src\\main\\java\\chapter08\\abc_copied.txt");
 
         //Basic path info
@@ -31,5 +31,24 @@ public class PathMethods {
         for(int index = 0; index < path.getNameCount(); index++) {
             writer.println(path.getName(index));
         }
+    }
+
+    private static void pathParent() {
+        Path path = Paths.get("asd/as/b");
+        Path path2 = Paths.get("/asd/asda/c");
+
+        System.out.println("Parent");
+        System.out.println(path.getParent());
+        System.out.println("Root");
+        System.out.println(path.getRoot());
+
+        System.out.println("Resolve sibling:");
+        System.out.println(path.resolveSibling(path2));
+        Path parent = path.getParent();
+        System.out.println(parent.resolve(path2));
+    }
+
+    public static void main(String[] args) {
+        pathParent();
     }
 }

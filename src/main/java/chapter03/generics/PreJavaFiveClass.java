@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class PreJavaFiveClass {
 
-    private static int getSum(List numbers) {
+    private static int getSum(List<Number> numbers) {
         int sum = 0;
         for (int index = 0; index < numbers.size(); index++) {
             try {
@@ -30,7 +30,13 @@ public class PreJavaFiveClass {
         return sum;
     }
 
+    private static List<Integer> getNumbers() {
+        return null;
+    }
+
     public static void main(String[] args) {
+        //List<Object> list = getNumbers();
+
         //No type information
         List numbers = new ArrayList();
         numbers.add("1");
