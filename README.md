@@ -10,4 +10,5 @@
 #### The goal is to become well-prepared and successfully path the before mentioned certification exam till the end of March 2018.  
 #### The repository birthdate is 21.11.2017.
 #### Previously I've passed OCAJP exam with 97% score. It took a little more than a month to be prepared. Obviously OCPJP is much harder and requires much more time to prepare.
-#### After taking an exam final score will be put over here ----> 000%.
+#### After taking an exam final score will be put over here ----> 91%.
+#### I've switched my exam for an extra week and took it on 06.04.2018 =).
