@@ -41,5 +41,12 @@ public class AbsoluteAndRelativePaths {
         //Combining relativize/resolve methods can end up with redundancies in a file path
         //#normalize method is invented for those issues
         System.out.println("Normalized: " + Paths.get("C:\\one\\..\\two\\three").normalize());
+
+        //
+        System.out.println("---------------------------------------");
+        Path path1 = Paths.get("q/a/b");
+        Path path2 = Paths.get("a/b/c/d");
+        System.out.println(path1.relativize(path2));
+        System.out.println(path2.relativize(path1));
     }
 }

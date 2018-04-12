@@ -9,7 +9,8 @@ import java.nio.file.Paths;
 /**
  * Reviewing helper methods of a {@link java.nio.file.Files} class
  */
-public class FilesHelperClass {
+public class
+FilesHelperClass {
 
     /**
      * Prints filename if it exists

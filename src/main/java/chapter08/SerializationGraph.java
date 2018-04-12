@@ -33,7 +33,7 @@ public class SerializationGraph {
     public static void main(String[] args) {
         Dog firstDog = new Dog("Fido", 35);
         Dog secondDog = new Dog("Nike", 35);
-        System.out.println("Before: " + firstDog.name + " " + firstDog.weight);
+        System.out.println("Before: name " + firstDog.name + " weight: " + firstDog.weight);
         System.out.println("Before: count " + firstDog.count);
 
         try {
@@ -54,7 +54,7 @@ public class SerializationGraph {
             e.printStackTrace();
         }
 
-        System.out.println("After: " + firstDog.name + " " + firstDog.weight);
+        System.out.println("After: name " + firstDog.name + " weight: " + firstDog.weight);
         System.out.println("After: count " + firstDog.count);
     }
 }
